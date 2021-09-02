@@ -19,6 +19,11 @@ const TailwindCSS: NextPage = () => {
           <div className="p-2 bg-gray-300 rounded cursor-pointer">
             Box Decoration
           </div>
+        </Link>{' '}
+        <Link href="/tailwindcss/background-blending">
+          <div className="p-2 bg-gray-300 rounded cursor-pointer">
+            Background Blending
+          </div>
         </Link>
       </div>
     </div>

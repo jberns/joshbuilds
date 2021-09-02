@@ -50,6 +50,12 @@ module.exports = {
       animation: {
         blob: 'blob 7s infinite',
       },
+      backgroundImage: {
+        texture: `url('/img/texture.jpg')`,
+      },
+      blur: {
+        px: "1px",
+      }
     },
   },
   variants: {
