@@ -25,6 +25,9 @@ const TailwindCSS: NextPage = () => {
             Background Blending
           </div>
         </Link>
+        <Link href="/tailwindcss/iphone">
+          <div className="p-2 bg-gray-300 rounded cursor-pointer">iPhone</div>
+        </Link>
       </div>
     </div>
   );
