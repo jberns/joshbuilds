@@ -27,6 +27,7 @@ module.exports = {
         teal: colors.teal,
         violet: colors.violet,
         yellow: colors.yellow,
+        sick: { red: '#ff0000', black: '#393939' },
       },
       spacing: {
         full: '100%',
@@ -54,8 +55,11 @@ module.exports = {
         texture: `url('/img/texture.jpg')`,
       },
       blur: {
-        px: "1px",
-      }
+        px: '1px',
+      },
+      transitionTimingFunction: {
+        'sick-bloop': 'cubic-bezier(1, -0.65, 0, 2.13)',
+      },
     },
   },
   variants: {
