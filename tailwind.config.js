@@ -47,9 +47,21 @@ module.exports = {
             transform: 'translate(0x, 0px) scale(1)',
           },
         },
+        'bg-gradient-tilt': {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(1deg)',
+          },
+          '75%': {
+            transform: 'rotate(-1deg)',
+          },
+        },
       },
       animation: {
         blob: 'blob 7s infinite',
+        'bg-gradient-tilt': 'bg-gradient-tilt 10s infinite linear',
       },
       backgroundImage: {
         texture: `url('/img/texture.jpg')`,

@@ -4,11 +4,12 @@ import Link from 'next/link';
 const TailwindCSS: NextPage = () => {
   const projects = [
     { name: 'Blurry Background', url: 'blurry-backgrounds' },
-    { name: ' Responsive Tile Grid', url: 'responsive-tile-grid' },
-    { name: ' Box Decoration', url: 'box-decoration' },
-    { name: ' Background Blending', url: 'background-blending' },
-    { name: ' iPhone', url: 'iphone' },
-    { name: ' Slick Fits', url: 'slick-fits' },
+    { name: 'Responsive Tile Grid', url: 'responsive-tile-grid' },
+    { name: 'Box Decoration', url: 'box-decoration' },
+    { name: 'Background Blending', url: 'background-blending' },
+    { name: 'Background Gradient', url: 'background-gradient' },
+    { name: 'iPhone', url: 'iphone' },
+    { name: 'Slick Fits', url: 'slick-fits' },
   ];
 
   return (
