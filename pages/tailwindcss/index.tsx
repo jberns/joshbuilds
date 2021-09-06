@@ -11,6 +11,7 @@ const TailwindCSS: NextPage = () => {
     { name: 'iPhone', url: 'iphone' },
     { name: 'Slick Fits', url: 'slick-fits' },
     { name: 'Form', url: 'form' },
+    { name: 'Dropdown', url: 'dropdown' },
   ];
 
   return (
