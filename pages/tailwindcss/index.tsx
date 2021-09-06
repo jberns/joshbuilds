@@ -10,6 +10,7 @@ const TailwindCSS: NextPage = () => {
     { name: 'Background Gradient', url: 'background-gradient' },
     { name: 'iPhone', url: 'iphone' },
     { name: 'Slick Fits', url: 'slick-fits' },
+    { name: 'Form', url: 'form' },
   ];
 
   return (

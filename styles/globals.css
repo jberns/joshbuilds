@@ -2,24 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .square {
-    aspect-ratio: 1/1;
-  }
-}
-
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  ,
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-}
-
-/* Slick Fits */
 @layer base {
+  /* Slick Fits */
   @font-face {
     font-family: 'radnika_next';
     src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
@@ -32,9 +16,26 @@
       Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
       sans-serif;
   }
+
+  /* Styling Form Example */
+  .styling-forms {
+    @apply w-full border-gray-300 rounded-lg shadow-sm focus:border-purple-600 focus:ring-purple-500;
+  }
 }
 
 @layer utilities {
+  .square {
+    aspect-ratio: 1/1;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  ,
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
   .text-shadow {
     text-shadow: 2px 2px 0 rgb(0 0 0 / 10%);
   }
