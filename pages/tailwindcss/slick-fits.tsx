@@ -4,7 +4,7 @@ import { products } from '../../components/slickfits/products';
 
 const SlickFits: NextPage = () => {
   return (
-    <div>
+    <div id="slick">
       <Header />
       <main className="max-w-[62.5rem] p-6 mx-auto">
         {/* Pagination */}
