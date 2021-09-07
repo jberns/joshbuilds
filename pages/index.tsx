@@ -1,11 +1,5 @@
-import { Popover, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import type { NextPage } from 'next';
-import React, { Fragment } from 'react';
-import { Charts } from '../components/home/Charts';
-import MenuItem from '../components/MenuItem';
-import { TabComponent } from '../components/Tab';
-import { HalfFlex, Lockup } from '../components/utils/templates';
+import React from 'react';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -16,254 +10,63 @@ const navigation = [
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-gray-50">
-      <Popover>
-        <div className="px-4 pt-6 mx-auto max-w-7xl sm:px-6">
-          <nav
-            className="relative flex items-center justify-between sm:h-10 md:justify-center"
-            aria-label="Global"
-          >
-            <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-              <div className="flex items-center justify-between w-full md:w-auto">
-                <a href="#">
-                  <span className="sr-only">Workflow</span>
-                  <img
-                    className="w-auto h-8 sm:h-10"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt=""
-                  />
-                </a>
-                <div className="flex items-center -mr-2 md:hidden">
-                  <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Open main menu</span>
-                    <MenuIcon className="w-6 h-6" aria-hidden="true" />
-                  </Popover.Button>
-                </div>
-              </div>
-            </div>
-            <div className="hidden md:flex md:space-x-10">
-              <MenuItem />
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="font-medium text-gray-500 hover:text-gray-900"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-            <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-              <span className="inline-flex rounded-md shadow">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-base font-medium text-indigo-600 bg-white border border-transparent rounded-md hover:text-indigo-500"
-                >
-                  Log in
-                </a>
-              </span>
-            </div>
-          </nav>
-        </div>
-
-        <Transition
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-100 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          <Popover.Panel
-            focus
-            className="absolute inset-x-0 top-0 z-10 p-2 transition origin-top-right transform md:hidden"
-          >
-            <div className="overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
-              <div className="flex items-center justify-between px-5 pt-4">
-                <div>
-                  <img
-                    className="w-auto h-8"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt=""
-                  />
-                </div>
-                <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Close main menu</span>
-                    <XIcon className="w-6 h-6" aria-hidden="true" />
-                  </Popover.Button>
-                </div>
-              </div>
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <a
-                href="#"
-                className="block w-full px-5 py-3 font-medium text-center text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700"
-              >
-                Log in
-              </a>
-            </div>
-          </Popover.Panel>
-        </Transition>
-      </Popover>
-
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-y-0 w-full h-full" aria-hidden="true">
-          <div className="relative h-full">
-            <svg
-              className="absolute transform right-full translate-y-1/3 translate-x-1/4 md:translate-y-1/2 sm:translate-x-1/2 lg:translate-x-full"
-              width={404}
-              height={784}
-              fill="none"
-              viewBox="0 0 404 784"
-            >
-              <defs>
-                <pattern
-                  id="e229dbec-10e9-49ee-8ec3-0286ca089edf"
-                  x={0}
-                  y={0}
-                  width={20}
-                  height={20}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect
-                    x={0}
-                    y={0}
-                    width={4}
-                    height={4}
-                    className="text-gray-200"
-                    fill="currentColor"
-                  />
-                </pattern>
-              </defs>
-              <rect
-                width={404}
-                height={784}
-                fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)"
-              />
-            </svg>
-            <svg
-              className="absolute transform left-full -translate-y-3/4 -translate-x-1/4 sm:-translate-x-1/2 md:-translate-y-1/2 lg:-translate-x-3/4"
-              width={404}
-              height={784}
-              fill="none"
-              viewBox="0 0 404 784"
-            >
-              <defs>
-                <pattern
-                  id="d2a68204-c383-44b1-b99f-42ccff4e5365"
-                  x={0}
-                  y={0}
-                  width={20}
-                  height={20}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect
-                    x={0}
-                    y={0}
-                    width={4}
-                    height={4}
-                    className="text-gray-200"
-                    fill="currentColor"
-                  />
-                </pattern>
-              </defs>
-              <rect
-                width={404}
-                height={784}
-                fill="url(#d2a68204-c383-44b1-b99f-42ccff4e5365)"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div className="relative pb-16 sm:pb-24">
-          <div className="px-4 mx-auto mt-16 max-w-7xl sm:mt-24 sm:px-6">
-            <div className="text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block">Data to enrich your</span>
-                <span className="block text-indigo-600">online business</span>
+    <div className="">
+      <div className="w-full h-screen">
+        <img
+          className="absolute inset-0 object-cover w-full h-full"
+          src="mountain.jpg"
+          alt="Picture of building"
+        />
+        {/* <nav className="absolute w-full bg-red-600">
+          <ul className="flex">
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+        </nav> */}
+        <div className="flex items-center justify-center h-full">
+          <div className="relative flex flex-col w-full mx-4 md:mx-20 md:justify-start">
+            <div className="px-8 py-4 text-gray-900 shadow-lg bg-white/40 backdrop-blur-md rounded-2xl">
+              <h1 className="text-4xl">Hey, I'm Josh Bernstein.</h1>
+              <h1 className="mt-4 text-5xl font-bold">
+                I am a{' '}
+                <span className="text-indigo-700 underline">
+                  full stack developer
+                </span>
+                .
               </h1>
-              <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
-              </p>
+            </div>
+            <div className="pt-4">
+              <button className="px-4 py-2 text-white bg-indigo-600 rounded-md shadow focus:outline-none focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2">
+                Contact
+              </button>
+
+              <button className="px-4 py-2 ml-2 text-gray-700 rounded-md shadow focus:outline-none focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 bg-white/40 backdrop-blur-md">
+                About Me
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 flex flex-col" aria-hidden="true">
-            <div className="flex-1 bg-yellow-500" />
-            <div className="flex-1 w-full bg-blue-800" />
-          </div>
-          <div className="px-4 mx-auto max-w-7xl sm:px-6">
-            <div className="relative w-full h-12 bg-red-500"></div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-800">
-        <div className="px-4 py-16 mx-auto mb-16 max-w-7xl sm:py-24 sm:px-6 lg:px-8">
-          <h2 className="text-sm font-semibold tracking-wide text-center text-gray-400 uppercase">
-            Trusted by over 26,000 forward-thinking companies
-          </h2>
-          <div className="grid grid-cols-2 gap-8 mt-8 md:grid-cols-6 lg:grid-cols-5">
-            <div className="flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-                alt="Tuple"
-              />
-            </div>
-            <div className="flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-                alt="Mirage"
-              />
-            </div>
-            <div className="flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                alt="StaticKit"
-              />
-            </div>
-            <div className="flex justify-center col-span-1 md:col-span-3 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                alt="Transistor"
-              />
-            </div>
-            <div className="flex justify-center col-span-2 md:col-span-3 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                alt="Workcation"
-              />
+        <nav className="absolute w-full bottom-4">
+          <div className="flex justify-center">
+            <div className="text-gray-900 bg-white rounded-full bg-white/30 backdrop-blur-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-10 h-10"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
-        </div>
+        </nav>
       </div>
-      <div className="max-w-screen-lg mx-auto space-y-20 xl:max-w-screen-xl sm:space-y-32 md:space-y-40 lg:space-y-44">
-        <Charts />
-        <HalfFlex />
-        <TabComponent />
-        <Lockup />
-      </div>
+      <h1>Below Page</h1>
     </div>
   );
 };
