@@ -12,6 +12,7 @@ const TailwindCSS: NextPage = () => {
     { name: 'Slick Fits', url: 'slick-fits' },
     { name: 'Form', url: 'form' },
     { name: 'Dropdown', url: 'dropdown' },
+    { name: 'Switch', url: 'switch' },
   ];
 
   return (
