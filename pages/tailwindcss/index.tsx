@@ -13,6 +13,7 @@ const TailwindCSS: NextPage = () => {
     { name: 'Form', url: 'form' },
     { name: 'Dropdown', url: 'dropdown' },
     { name: 'Switch', url: 'switch' },
+    { name: 'Labels', url: 'floating-labels' },
   ];
 
   return (
