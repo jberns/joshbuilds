@@ -14,6 +14,7 @@ const TailwindCSS: NextPage = () => {
     { name: 'Dropdown', url: 'dropdown' },
     { name: 'Switch', url: 'switch' },
     { name: 'Labels', url: 'floating-labels' },
+    { name: 'Stacked Layouts', url: 'stacked' },
   ];
 
   return (
