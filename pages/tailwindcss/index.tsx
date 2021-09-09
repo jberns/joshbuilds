@@ -16,6 +16,7 @@ const TailwindCSS: NextPage = () => {
     { name: 'Labels', url: 'floating-labels' },
     { name: 'Stacked Layouts', url: 'stacked' },
     { name: 'Stories', url: 'stories' },
+    { name: 'Backdrop Filters', url: 'backdrop-filters' },
   ];
 
   return (
