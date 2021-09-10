@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
+import { Flow } from '../components/home/Flow';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -25,22 +26,29 @@ const Home: NextPage = () => {
         </nav> */}
         <div className="flex items-center justify-center h-full">
           <div className="relative flex flex-col w-full mx-4 md:mx-20 md:justify-start">
-            <div className="px-8 py-4 text-gray-900 shadow-lg bg-white/40 backdrop-blur-md rounded-2xl">
-              <h1 className="text-4xl">Hey, I'm Josh Bernstein.</h1>
-              <h1 className="mt-4 text-5xl font-bold">
+            <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 backdrop-blur-md rounded-2xl">
+              <h1 className="text-3xl">Hey, I'm Josh Bernstein.</h1>
+              <h1 className="mt-4 text-4xl font-semibold">
                 I am a{' '}
-                <span className="text-indigo-700 underline">
+                <span className="text-orange-600 underline">
                   full stack developer
                 </span>
-                .
+                {' | '}
+                <span className="text-orange-600 underline">rock climber</span>
+                {' | '}
+                <span className="text-orange-600 underline">
+                  business analyst
+                </span>
+                {' | '}
+                <span className="text-orange-600 underline">cyclist</span>.
               </h1>
             </div>
             <div className="pt-4">
-              <button className="px-4 py-2 text-white bg-indigo-600 rounded-md shadow focus:outline-none focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2">
+              <button className="px-4 py-2 text-white bg-orange-600 rounded-md shadow focus:outline-none focus:ring-orange-600 focus:ring-2 focus:ring-offset-2">
                 Contact
               </button>
 
-              <button className="px-4 py-2 ml-2 text-gray-700 rounded-md shadow focus:outline-none focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 bg-white/40 backdrop-blur-md">
+              <button className="px-4 py-2 ml-2 text-gray-700 rounded-md shadow focus:outline-none focus:ring-orange-600 focus:ring-2 focus:ring-offset-2 bg-white/40 backdrop-blur-md">
                 About Me
               </button>
             </div>
@@ -66,7 +74,65 @@ const Home: NextPage = () => {
           </div>
         </nav>
       </div>
-      <h1>Below Page</h1>
+
+      {/* Bellow Fold of Page starts here */}
+
+      {/* Software Section */}
+      <div>
+        <div className="flex flex-col justify-center py-20 space-y-10 bg-gray-100">
+          <div>
+            <h2 className="font-medium text-center text-orange-600 uppercase">
+              FrontEnd
+            </h2>
+            <div className="flex justify-center mt-4 space-x-6">
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-react-original"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-nextjs-original-wordmark"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-graphql-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-tailwindcss-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-javascript-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-typescript-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-html5-plain-wordmark"></i>
+              <i className="p-3 text-5xl text-white rounded shadow from-orange-400 to-red-600 bg-gradient-to-tr devicon-css3-plain-wordmark"></i>
+            </div>
+          </div>
+          <div>
+            <h2 className="font-medium text-center uppercase text text-cyan-600">
+              Backend
+            </h2>
+            <div className="flex justify-center mt-4 space-x-6">
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-green-400 to-cyan-600 devicon-nodejs-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-green-400 to-cyan-600 devicon-java-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-green-400 to-cyan-600 devicon-python-plain"></i>
+            </div>
+          </div>
+          <div>
+            <h2 className="font-medium text-center text-indigo-600 uppercase text">
+              Database
+            </h2>
+            <div className="flex justify-center mt-4 space-x-6">
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-blue-400 to-indigo-600 devicon-postgresql-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-blue-400 to-indigo-600 devicon-mysql-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-blue-400 to-indigo-600 devicon-mongodb-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-blue-400 to-indigo-600 devicon-redis-plain"></i>
+            </div>
+          </div>
+          <div>
+            <h2 className="font-medium text-center text-pink-600 uppercase text">
+              Source Control
+            </h2>
+            <div className="flex justify-center mt-4 space-x-6">
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-indigo-400 to-pink-600 devicon-postgresql-plain"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Analyst/Agile Workflow */}
+      <div className="w-full h-full">
+        <Flow />
+      </div>
+
+      {/* End or Page */}
     </div>
   );
 };
