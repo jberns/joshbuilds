@@ -1,5 +1,14 @@
 const colors = require('tailwindcss/colors');
 
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var($)`;
+  };
+}
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -71,6 +80,27 @@ module.exports = {
       },
       transitionTimingFunction: {
         'sick-bloop': 'cubic-bezier(1, -0.65, 0, 2.13)',
+      },
+      // Theming Example
+      textColor: {
+        skin: {
+          base: 'var(--color-text-base)',
+          muted: 'var(--color-text-muted)',
+          inverted: 'var(--color-text-inverted)',
+        },
+      },
+      backgroundColor: {
+        skin: {
+          fill: 'var(--color-fill)',
+          'button-accent': 'var(--color-button-accent)',
+          'button-accent-hover': 'var(--color-button-accent-hover)',
+          'button-muted': withOpacity("--color-button-muted"),
+        },
+      },
+      gradientColorStops: {
+        skin: {
+          hue: 'var(--color-fill)',
+        },
       },
     },
   },
