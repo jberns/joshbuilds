@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import { Flow } from '../components/home/Flow';
+import { Nav } from '../components/home/Nav';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -12,18 +13,13 @@ const navigation = [
 const Home: NextPage = () => {
   return (
     <div className="">
-      <div className="w-full h-screen">
+      <div className="relative w-full h-screen">
         <img
           className="absolute inset-0 object-cover w-full h-full"
           src="mountain.jpg"
           alt="Picture of building"
         />
-        {/* <nav className="absolute w-full bg-red-600">
-          <ul className="flex">
-            <li>Item 1</li>
-            <li>Item 2</li>
-          </ul>
-        </nav> */}
+        <Nav />
         <div className="flex items-center justify-center h-full">
           <div className="relative flex flex-col w-full mx-4 md:mx-20 md:justify-start">
             <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 backdrop-blur-md rounded-2xl">
@@ -121,7 +117,7 @@ const Home: NextPage = () => {
               Source Control
             </h2>
             <div className="flex justify-center mt-4 space-x-6">
-              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-indigo-400 to-pink-600 devicon-postgresql-plain"></i>
+              <i className="p-3 text-5xl text-white rounded shadow bg-gradient-to-tr from-indigo-400 to-pink-600 devicon-github-original"></i>
             </div>
           </div>
         </div>
