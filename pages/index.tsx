@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import { Flow } from '../components/home/Flow';
-import { Nav } from '../components/home/Nav';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -19,7 +18,6 @@ const Home: NextPage = () => {
           src="mountain.jpg"
           alt="Picture of building"
         />
-        <Nav />
         <div className="flex items-center justify-center h-full">
           <div className="relative flex flex-col w-full mx-4 md:mx-20 md:justify-start">
             <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 backdrop-blur-md rounded-2xl">
@@ -28,6 +26,10 @@ const Home: NextPage = () => {
                 I am a{' '}
                 <span className="text-orange-600 underline">
                   full stack developer
+                </span>
+                {' | '}
+                <span className="text-orange-600 underline">
+                  mechanical engineer
                 </span>
                 {' | '}
                 <span className="text-orange-600 underline">rock climber</span>
@@ -53,7 +55,7 @@ const Home: NextPage = () => {
 
         <nav className="absolute w-full bottom-4">
           <div className="flex justify-center">
-            <div className="text-gray-900 bg-white rounded-full bg-white/30 backdrop-blur-md">
+            <div className="text-gray-900 rounded-full bg-white/50 backdrop-blur-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-10 h-10"
