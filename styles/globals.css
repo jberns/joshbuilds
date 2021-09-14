@@ -11,6 +11,16 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'source_code_pro';
+    src: url('/static/SourceCodePro-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'rubik';
+    src: url('/static/Rubik-VariableFont_wght.ttf') format('truetype');
+  }
+
   #slick {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',

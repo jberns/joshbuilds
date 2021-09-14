@@ -29,7 +29,7 @@ const ThemeToggle = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`${
-          isDark() ? 'text-gray-300' : 'text-yellow-500'
+          isDark() ? 'text-gray-300' : 'text-yellow-400'
         } w-5 h-5s transition-colors ease-in-out duration-200`}
         viewBox="0 0 20 20"
         fill="currentColor"
@@ -45,7 +45,7 @@ const ThemeToggle = () => {
         onChange={(value) => switchTheme(value)}
         className={`${
           isDark() ? 'bg-blue-600' : 'bg-green-400'
-        } inline-flex flex-shrink-0 relative h-6 w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors eas-in-out duration-200 focus: outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+        } inline-flex flex-shrink-0 relative h-6 w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors eas-in-out duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
       >
         <span className="sr-only">Light/Dark mode</span>
         <span

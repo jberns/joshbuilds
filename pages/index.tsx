@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import { Flow } from '../components/home/Flow';
+import 'twin.macro';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -12,50 +12,70 @@ const navigation = [
 
 const Home: NextPage = () => {
   return (
-    <div className="">
-      <div className="relative w-full h-screen">
-        <Image
-          className="absolute inset-0 object-cover w-full h-full transition-all dark:filter dark:saturate-[0.5] dark:brightness-[0.5] dark:duration-200"
-          layout="fill"
-          src="/mountain.jpg"
-          alt="Building"
-        />
-        <div className="flex items-center justify-center h-full">
-          <div className="relative flex flex-col w-full mx-4 md:mx-20 md:justify-start">
-            <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 dark:bg-gray-400/10 dark:text-gray-200 backdrop-blur-md rounded-2xl">
-              <h1 className="text-3xl">Hey, I&apos;m Josh Bernstein.</h1>
-              <h1 className="mt-4 text-4xl font-semibold">
+    <div className="absolute top-0 left-0 right-0">
+      <div className="relative w-full h-screen bg-cover bg-gradient">
+        <div className="absolute inset-0 duration-200 ease-in-out dark:bg-black/50 transition-color"></div>
+        <div className="relative flex items-center justify-center h-full">
+          <div className="flex flex-col w-full mx-4 md:mx-20 md:justify-start">
+            <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 dark:bg-gray-400/10 dark:text-gray-100 backdrop-blur-md rounded-2xl">
+              <h1 className="text-5xl font-semibold tracking-wide">
+                {' '}
+                Hey, I&apos;m Josh.
+              </h1>
+              <h1 className="mt-8 text-3xl font-medium">
                 I am a{' '}
-                <span className="text-orange-600 underline dark:text-orange-400">
+                <span className="text-purple-600 dark:text-purple-400">
                   full stack developer
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline dark:text-orange-400">
+                <span className="text-purple-600 dark:text-purple-400">
                   mechanical engineer
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline dark:text-orange-400">
+                <span className="text-purple-600 dark:text-purple-400">
                   rock climber
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline dark:text-orange-400">
+                <span className="text-purple-600 dark:text-purple-400">
                   business analyst
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline dark:text-orange-400">
+                <span className="text-purple-600 dark:text-purple-400">
                   cyclist
                 </span>
                 .
               </h1>
             </div>
-            <div className="pt-4">
-              <button className="px-4 py-2 text-white bg-orange-600 rounded-md shadow focus:outline-none focus:ring-orange-600 focus:ring-2 focus:ring-offset-2">
-                Contact
-              </button>
+            <div className="flex mt-8 space-x-4">
+              <Link href="/contact" passHref>
+                <a
+                  tw="
+                px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 
+                bg-gradient-to-br from-amber-400 to-orange-600 
+                transform transition ease-in-out duration-200 
+                hover:( scale-110 shadow-md )
+                focus:( outline-none ring-2 ring-amber-400 )
+                dark:( text-gray-100 from-pink-400 to-indigo-700 )
+                dark:focus:( ring-purple-400 )
+                "
+                >
+                  <div>Contact</div>
+                </a>
+              </Link>
 
-              <button className="px-4 py-2 ml-2 text-gray-700 rounded-md shadow focus:outline-none focus:ring-orange-600 focus:ring-2 focus:ring-offset-2 bg-white/40 backdrop-blur-md">
-                About Me
-              </button>
+              <Link href="/about" passHref>
+                <a
+                  tw="px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 bg-white/50 
+                  transform transition ease-in-out duration-200 
+                  hover:( scale-110 shadow-md )
+                  dark:( text-gray-200 bg-black/20 )
+                  focus:( outline-none ring-2 ring-amber-400 )
+                  dark:focus:( ring-purple-400 )
+                "
+                >
+                  About me
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -133,9 +153,7 @@ const Home: NextPage = () => {
       </div>
 
       {/* Analyst/Agile Workflow */}
-      <div className="w-full h-full">
-        <Flow />
-      </div>
+      <div className="w-full h-full">{/* <Flow /> */}</div>
 
       {/* End or Page */}
     </div>
