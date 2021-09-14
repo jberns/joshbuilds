@@ -12,7 +12,7 @@ function withOpacity(variableName) {
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -94,7 +94,7 @@ module.exports = {
           fill: 'var(--color-fill)',
           'button-accent': 'var(--color-button-accent)',
           'button-accent-hover': 'var(--color-button-accent-hover)',
-          'button-muted': withOpacity("--color-button-muted"),
+          'button-muted': withOpacity('--color-button-muted'),
         },
       },
       gradientColorStops: {

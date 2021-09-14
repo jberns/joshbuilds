@@ -1,43 +1,50 @@
-  
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
-export function IconContainer({className = '', ...props }) {
+export function IconContainer({ className = '', ...props }) {
   return (
     <div
       className={`w-12 h-12 rounded-xl mb-8 bg-gradient-to-br flex items-center justify-center ${className}`}
       {...props}
     />
-  )
+  );
 }
 
-export function Caption({className = '', ...props }) {
+export function Caption({ className = '', ...props }) {
   return (
     <p
       className={`sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase ${className}`}
       {...props}
     />
-  )
+  );
 }
 
-export function BigText({className = '', ...props }) {
+export function BigText({ className = '', ...props }) {
   return (
     <p
       className={`text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-gray-900 tracking-tight ${className}`}
       {...props}
     />
-  )
+  );
 }
 
-export function Paragraph({className = '', ...props }) {
+export function Paragraph({ className = '', ...props }) {
   return (
     <p
       className={`max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6 ${className}`}
       {...props}
     />
-  )
+  );
 }
 
-export function Link({ className = '', href, ...props } :{className: String, href: URL, props:{}}) {
+export function Link({
+  className = '',
+  href,
+  ...props
+}: {
+  className: String;
+  href: URL;
+  props: {};
+}) {
   return (
     <NextLink href={href}>
       <a
@@ -45,9 +52,14 @@ export function Link({ className = '', href, ...props } :{className: String, hre
         {...props}
       />
     </NextLink>
-  )
+  );
 }
 
 export function InlineCode({ className = '', ...props }) {
-  return <code className={`font-mono text-gray-900 font-bold ${className}`} {...props} />
+  return (
+    <code
+      className={`font-mono text-gray-900 font-bold ${className}`}
+      {...props}
+    />
+  );
 }
