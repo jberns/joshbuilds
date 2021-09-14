@@ -38,6 +38,25 @@ module.exports = {
         yellow: colors.yellow,
         sick: { red: '#ff0000', black: '#393939' },
       },
+      fontFamily: {
+        square: [
+          'rubik',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
       spacing: {
         full: '100%',
       },
@@ -74,6 +93,7 @@ module.exports = {
       },
       backgroundImage: {
         texture: `url('/img/texture.jpg')`,
+        gradient: `url('/img/purple-teal-gradient.jpg')`,
       },
       blur: {
         px: '1px',

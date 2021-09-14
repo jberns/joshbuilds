@@ -1,9 +1,17 @@
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import React, { Fragment } from 'react';
+import 'twin.macro';
+import tw from 'twin.macro';
+import { LogoIcon } from '../LogoIcon';
 import { ThemeToggle } from '../themeToggle';
 
-const navLinks = [
+interface INavLinks {
+  name: string;
+  url: string;
+}
+
+const navLinks: INavLinks[] = [
   {
     name: 'About',
     url: '/about',
@@ -12,31 +20,50 @@ const navLinks = [
   { name: 'Contact', url: '/contact' },
 ];
 
+const NavLink = (link: INavLinks) => {
+  return (
+    <li tw="" key={link.name}>
+      <Link href={`${link.url}`} passHref>
+        <a
+          tw="
+          relative inset-0 block px-4 py-1 text-sm font-medium rounded cursor-pointer 
+          transition ease-in-out duration-200
+          hover:( bg-black/10 )  
+          dark:hover:( bg-white/10 ) 
+          focus:( outline-none ring-2 ring-purple-600 )
+          dark:focus:( ring-purple-400 )
+          dark:( text-gray-300 ) 
+          "
+        >
+          {link.name}
+        </a>
+      </Link>
+    </li>
+  );
+};
+
 export const Nav = () => {
   return (
-    <div className="relative z-10">
-      <nav className="absolute hidden w-full py-3 pr-5 bg-white dark:bg-gray-900 sm:block">
-        <ul className="flex items-center justify-end space-x-4">
+    <div tw="relative z-10">
+      <nav tw="pl-5 hidden w-full py-3 pr-5 shadow bg-white/50 dark:bg-gray-900/50 sm:( flex justify-between )  backdrop-blur-md">
+        <ul tw="flex items-center space-x-4">
+          <li>
+            <LogoIcon />
+          </li>
           {navLinks.map((link) => {
-            return (
-              <li className="" key={link.name}>
-                <Link href={`${link.url}`}>
-                  <a className="relative inset-0 block px-4 py-1 text-sm font-medium bg-orange-200 rounded focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">
-                    {link.name}
-                  </a>
-                </Link>
-              </li>
-            );
+            return NavLink(link);
           })}
-          <ThemeToggle />
         </ul>
+        <ThemeToggle />
       </nav>
-      <div className="absolute flex justify-end w-full pt-2 sm:hidden">
-        <Menu className="" as="div">
-          <Menu.Button className="px-4 py-2 mr-5 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+
+      <div tw="absolute flex justify-end w-full pt-2 sm:hidden">
+        <Menu as="div">
+          <Menu.Button tw="px-4 py-2 mr-5 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
             Nav
           </Menu.Button>
           <Transition
+            //@ts-ignore This is part of the example
             as={Fragment}
             enter="transition ease-out duration-100"
             enterFrom="transform opacity-0 scale-95"
@@ -45,8 +72,8 @@ export const Nav = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute left-0 z-10 w-full mt-2 origin-top-right focus:outline-none">
-              <div className="px-5 py-2 mx-5 bg-white rounded-md shadow">
+            <Menu.Items tw="absolute left-0 z-10 w-full mt-2 origin-top-right focus:outline-none">
+              <div tw="px-5 py-2 mx-5 bg-white rounded-md shadow">
                 {navLinks.map((link) => {
                   return (
                     <Menu.Item as="div" key={link.name}>
@@ -54,12 +81,13 @@ export const Nav = () => {
                         return (
                           <Link href={link.url}>
                             <a
-                              className={`${
+                              css={[
                                 active
-                                  ? 'bg-orange-500 text-white'
-                                  : 'text-gray-900'
-                              }
-                            group flex rounded-md items-center w-full px-2 py-1 text-sm`}
+                                  ? tw`text-white bg-orange-500`
+                                  : tw`text-gray-900`,
+
+                                tw`flex items-center w-full px-2 py-1 text-sm rounded-md`,
+                              ]}
                             >
                               {link.name}
                             </a>

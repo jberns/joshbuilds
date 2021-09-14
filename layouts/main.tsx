@@ -8,10 +8,10 @@ interface ILayoutProps {
 
 export function MainLayout({ children }: ILayoutProps) {
   return (
-    <>
+    <div className="relative min-h-screen">
       <Nav />
       <main className="">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
