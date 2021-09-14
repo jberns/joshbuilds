@@ -85,7 +85,7 @@ const initialElements: (Node | Edge)[] = [
 ];
 
 const onLoad = (reactFlowInstance: OnLoadParams) => {
-  console.log('flow loaded:', reactFlowInstance);
+  // console.log('flow loaded:', reactFlowInstance);
   reactFlowInstance.fitView();
 };
 

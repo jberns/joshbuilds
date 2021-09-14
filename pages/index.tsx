@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import React from 'react';
 import { Flow } from '../components/home/Flow';
 
@@ -13,32 +14,38 @@ const Home: NextPage = () => {
   return (
     <div className="">
       <div className="relative w-full h-screen">
-        <img
-          className="absolute inset-0 object-cover w-full h-full"
-          src="mountain.jpg"
-          alt="Picture of building"
+        <Image
+          className="absolute inset-0 object-cover w-full h-full transition-all dark:filter dark:saturate-[0.5] dark:brightness-[0.5] dark:duration-200"
+          layout="fill"
+          src="/mountain.jpg"
+          alt="Building"
         />
         <div className="flex items-center justify-center h-full">
           <div className="relative flex flex-col w-full mx-4 md:mx-20 md:justify-start">
-            <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 backdrop-blur-md rounded-2xl">
-              <h1 className="text-3xl">Hey, I'm Josh Bernstein.</h1>
+            <div className="px-8 py-4 text-gray-800 shadow-lg bg-white/40 dark:bg-gray-400/10 dark:text-gray-200 backdrop-blur-md rounded-2xl">
+              <h1 className="text-3xl">Hey, I&apos;m Josh Bernstein.</h1>
               <h1 className="mt-4 text-4xl font-semibold">
                 I am a{' '}
-                <span className="text-orange-600 underline">
+                <span className="text-orange-600 underline dark:text-orange-400">
                   full stack developer
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline">
+                <span className="text-orange-600 underline dark:text-orange-400">
                   mechanical engineer
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline">rock climber</span>
+                <span className="text-orange-600 underline dark:text-orange-400">
+                  rock climber
+                </span>
                 {' | '}
-                <span className="text-orange-600 underline">
+                <span className="text-orange-600 underline dark:text-orange-400">
                   business analyst
                 </span>
                 {' | '}
-                <span className="text-orange-600 underline">cyclist</span>.
+                <span className="text-orange-600 underline dark:text-orange-400">
+                  cyclist
+                </span>
+                .
               </h1>
             </div>
             <div className="pt-4">
