@@ -12,7 +12,7 @@ const navigation = [
 
 const Home: NextPage = () => {
   return (
-    <div className="absolute top-0 left-0 right-0">
+    <div className="">
       <div className="relative w-full h-screen bg-cover bg-gradient">
         <div className="absolute inset-0 duration-200 ease-in-out dark:bg-black/50 transition-color"></div>
         <div className="relative flex items-center justify-center h-full">
