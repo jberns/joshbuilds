@@ -5,13 +5,6 @@ import 'twin.macro';
 import { Flow } from '../components/home/Flow';
 import { CodingSVG } from '../components/svg/svgs';
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
-
 const Home: NextPage = () => {
   return (
     <div tw="">
@@ -51,10 +44,11 @@ const Home: NextPage = () => {
                 px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 
                 bg-gradient-to-br from-amber-400 to-orange-600 
                 transform transition ease-in-out duration-200 
-                hover:( scale-110 shadow-md )
-                focus:( outline-none ring-2 ring-amber-400 )
-                dark:( text-gray-100 from-pink-400 to-indigo-700 )
-                dark:focus:( ring-purple-400 )
+                hover:(scale-110 shadow-md)
+                focus:(outline-none ring-2 ring-amber-400)
+                dark:(text-gray-100 from-pink-400 to-indigo-700)
+                dark:focus:(ring-purple-400)
+                dark:hover:(text-white)
                 "
                   >
                     <div>Contact</div>
@@ -63,12 +57,14 @@ const Home: NextPage = () => {
 
                 <Link href="/about" passHref>
                   <a
-                    tw="px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 bg-white/50 
+                    tw="
+                px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 bg-white/50 
                 transform transition ease-in-out duration-200 
                 hover:( scale-110 shadow-md )
-                dark:( text-gray-200 bg-black/20 )
+                dark:( text-gray-100 bg-white/10 )
                 focus:( outline-none ring-2 ring-amber-400 )
                 dark:focus:( ring-purple-400 )
+                dark:hover:(text-white)
                 "
                   >
                     About me
@@ -100,10 +96,10 @@ const Home: NextPage = () => {
       </div>
 
       {/* Bellow Fold of Page starts here */}
-      <div tw="mx-auto">
-        <div tw="flex justify-center items-center bg-gray-100 dark:bg-gray-800 flex-col lg:flex-row py-40">
-          <div tw="w-full lg:w-1/2">
-            <div tw="mx-20">
+      <div tw="flex flex-col justify-center bg-gray-100 dark:bg-gray-800">
+        <div tw="py-40 max-w-7xl mx-auto flex justify-center items-center flex-col lg:flex-row">
+          <div tw="w-full px-4 sm:px-6 md:px-8 lg:w-1/2">
+            <div tw="">
               <h2 tw="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-purple-600 mb-3 dark:text-purple-400">
                 Programming
               </h2>
