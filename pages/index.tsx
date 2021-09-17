@@ -4,8 +4,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import 'twin.macro';
-import { Flow } from '../components/home/Flow';
-import { CodingSVG } from '../components/svg/svgs';
+import { CodingSVG, CollaborationSVG } from '../components/svg/svgs';
 
 const Home: NextPage = () => {
   return (
@@ -241,7 +240,7 @@ const Home: NextPage = () => {
 
         {/* Analyst/Agile Workflow */}
         <div tw="w-full h-full py-20">
-          <Flow />
+          <CollaborationSVG />
         </div>
 
         {/* End or Page */}
