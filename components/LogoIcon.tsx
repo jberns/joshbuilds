@@ -13,7 +13,7 @@ const LogoIcon = () => {
         hover:( shadow-xl scale-110 )
         focus:( outline-none ring-2 ring-orange-600 ring-offset-purple-300 ring-offset-2 )
         dark:( text-gray-100 from-pink-400 to-indigo-700 )
-        focus:dark:( ring-purple-400 ring-offset-black/50 ring-offset-2 )
+        focus:dark:( ring-purple-400 ring-offset-black/100 ring-offset-2 )
         "
       >
         <div tw="text-xl font-bold">JB</div>
