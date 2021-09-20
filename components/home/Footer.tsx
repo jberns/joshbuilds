@@ -15,7 +15,7 @@ export const Footer: NextPage = () => {
       <div tw="max-w-screen-lg xl:max-w-screen-xl">
         <div
           tw="divide-y divide-gray-200
-        dark:divide-gray-800"
+          dark:divide-gray-800"
         >
           <div tw="flex pb-10 justify-between items-center flex-col space-y-5 sm:(flex-row space-y-0) sm:space-x-20 md:space-x-56 lg:space-x-[30rem] xl:space-x-[40rem]">
             <div tw="flex items-center space-x-5">
