@@ -89,7 +89,8 @@ const iPhone: NextPage = () => {
                     Surfing: heals the soul, kills the ribs
                   </h3>
                   <p className="mt-1 text-xs">
-                    It's all fun and thrills until you get sucked over the falls
+                    It&apos;s all fun and thrills until you get sucked over the
+                    falls
                   </p>
                 </div>
                 <div>
