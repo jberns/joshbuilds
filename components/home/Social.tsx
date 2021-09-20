@@ -2,6 +2,7 @@ import {
   faFacebook,
   faGithub,
   faInstagram,
+  faLinkedin,
   faReddit,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
@@ -11,12 +12,16 @@ import { SocialLink } from './SocialLink';
 
 const socialSites = [
   {
-    icon: faTwitter,
-    href: 'https://twitter.com/joshstein',
+    icon: faLinkedin,
+    href: 'https://www.linkedin.com/in/j-berns/',
   },
   {
     icon: faGithub,
     href: 'https://github.com/jberns',
+  },
+  {
+    icon: faTwitter,
+    href: 'https://twitter.com/joshstein',
   },
   {
     icon: faInstagram,
