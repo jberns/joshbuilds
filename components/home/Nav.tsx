@@ -1,3 +1,5 @@
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -16,10 +18,8 @@ interface INavLinks {
 }
 
 const navLinks: INavLinks[] = [
-  {
-    name: 'About',
-    url: '/about',
-  },
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '/about' },
   { name: 'Projects', url: '/projects' },
   { name: 'Contact', url: '/contact' },
 ];
@@ -38,17 +38,6 @@ export const Nav = ({ position }: INav) => {
           tw`flex justify-between w-full py-3 pl-5 pr-5 transition duration-200 ease-in-out shadow backdrop-blur-md bg-white/50 dark:bg-gray-900`,
         ]}
       >
-        {/* Mobile Nav Component */}
-        <ul tw="flex items-center justify-between w-full sm:hidden">
-          <li>{MobileNav()}</li>
-          <li>
-            <LogoIcon />
-          </li>
-          <li>
-            <ThemeToggle />
-          </li>
-        </ul>
-
         {/* Desktop Nav Component */}
         <ul tw="items-center space-x-4 hidden sm:flex">
           <li>
@@ -58,9 +47,21 @@ export const Nav = ({ position }: INav) => {
             return NavLink(link, currentPath);
           })}
         </ul>
-        <div className="items-center hidden sm:flex">
+
+        <div tw="items-center hidden sm:flex">
           <ThemeToggle />
         </div>
+
+        {/* Mobile Nav Component */}
+        <ul tw="grid grid-cols-3 w-full sm:hidden">
+          <li tw="flex justify-start items-center">{MobileNav()}</li>
+          <li tw="flex justify-center items-center">
+            <LogoIcon />
+          </li>
+          <li tw="flex justify-end items-center">
+            <ThemeToggle />
+          </li>
+        </ul>
       </nav>
     </div>
   );
@@ -94,53 +95,88 @@ const NavLink = (link: INavLinks, currentPath: string) => {
 
 const MobileNav = () => {
   return (
-    <div tw="flex justify-end w-full sm:hidden">
+    <div tw="sm:hidden">
       <Menu as="div">
-        {/* @ts-ignore complex union error */}
-        <Menu.Button tw="px-4 py-2 mr-5 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-          Nav
-        </Menu.Button>
-        {/* @ts-ignore complex union error */}
-        <Transition
-          //@ts-ignore part of example
-          as={Fragment}
-          enter="transition ease-out duration-100"
-          enterFrom="transform opacity-0 scale-95"
-          enterTo="transform opacity-100 scale-100"
-          leave="transition ease-in duration-75"
-          leaveFrom="transform opacity-100 scale-100"
-          leaveTo="transform opacity-0 scale-95"
-        >
-          {/* @ts-ignore complex union error */}
-          <Menu.Items tw="absolute left-0 z-10 w-full mt-2 origin-top-right focus:outline-none">
-            <div tw="px-5 py-2 mx-5 bg-white rounded-md shadow">
-              {navLinks.map((link) => {
-                return (
-                  // @ts-ignore complex union error
-                  <Menu.Item as="div" key={link.name}>
-                    {({ active }) => {
-                      return (
-                        <Link href={link.url}>
-                          <a
-                            css={[
-                              active
-                                ? tw`text-white bg-orange-500`
-                                : tw`text-gray-900`,
+        {({ open }) => (
+          <>
+            <Menu.Button
+              //  @ts-ignore complex union error
+              tw="text-lg font-medium text-orange-600 rounded-md 
+                hover:bg-opacity-30 
+                focus:outline-none
+                focus-visible:(ring-2 ring-white ring-opacity-75)
+                dark:text-purple-400
+                "
+            >
+              <FontAwesomeIcon icon={faBars} />
+            </Menu.Button>
+            {/* @ts-ignore complex union error */}
+            <Transition
+              //@ts-ignore part of example
+              show={open}
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-100"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-100"
+            >
+              <div
+                tw="py-3 px-3 absolute left-0 top-0 z-10 w-full rounded-b-md shadow-lg bg-white 
+                  dark:bg-gray-900"
+              >
+                <ul tw="grid grid-cols-3 w-full mb-5 sm:hidden">
+                  <li tw="flex justify-start items-center">
+                    <Menu.Button
+                      tw="px-2 text-lg font-medium text-gray-900 rounded-md 
+                        hover:bg-opacity-30 
+                        focus:outline-none 
+                        focus-visible:(ring-2 ring-white ring-opacity-75)
+                        dark:text-gray-200
+                        dark:hover:text-white
+                        "
+                    >
+                      <FontAwesomeIcon icon={faTimes} />
+                    </Menu.Button>
+                  </li>
+                  <li tw="flex justify-center items-center">
+                    <LogoIcon />
+                  </li>
+                </ul>
 
-                              tw`flex items-center w-full px-2 py-1 text-sm rounded-md`,
-                            ]}
-                          >
-                            {link.name}
-                          </a>
-                        </Link>
+                {/* @ts-ignore complex union error */}
+                <Menu.Items tw="focus:outline-none">
+                  <div tw="">
+                    {navLinks.map((link) => {
+                      return (
+                        // @ts-ignore complex union error
+                        <Menu.Item as="div" key={link.name}>
+                          {({ active }) => {
+                            return (
+                              <Link href={link.url} passHref>
+                                <a
+                                  css={[
+                                    active
+                                      ? tw`bg-orange-400 dark:(bg-purple-400) dark:hover:text-white`
+                                      : tw`text-gray-900`,
+                                    tw`flex items-center cursor-pointer w-full px-2 py-1 text-sm rounded-md font-medium dark:(text-gray-200)`,
+                                  ]}
+                                >
+                                  {link.name}
+                                </a>
+                              </Link>
+                            );
+                          }}
+                        </Menu.Item>
                       );
-                    }}
-                  </Menu.Item>
-                );
-              })}
-            </div>
-          </Menu.Items>
-        </Transition>
+                    })}
+                  </div>
+                </Menu.Items>
+              </div>
+            </Transition>
+          </>
+        )}
       </Menu>
     </div>
   );
