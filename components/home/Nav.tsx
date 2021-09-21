@@ -1,5 +1,6 @@
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { Fragment } from 'react';
 import 'twin.macro';
 import tw from 'twin.macro';
@@ -24,6 +25,9 @@ const navLinks: INavLinks[] = [
 ];
 
 export const Nav = ({ position }: INav) => {
+  const router = useRouter();
+  const currentPath = router.asPath;
+
   return (
     <div
       tw="w-full z-10"
@@ -51,7 +55,7 @@ export const Nav = ({ position }: INav) => {
             <LogoIcon />
           </li>
           {navLinks.map((link) => {
-            return NavLink(link);
+            return NavLink(link, currentPath);
           })}
         </ul>
         <div className="items-center hidden sm:flex">
@@ -62,20 +66,24 @@ export const Nav = ({ position }: INav) => {
   );
 };
 
-const NavLink = (link: INavLinks) => {
+const NavLink = (link: INavLinks, currentPath: string) => {
+  const active = link.url === currentPath;
+
   return (
     <li tw="" key={link.name}>
       <Link href={`${link.url}`} passHref>
         <a
           tw="
           block px-4 py-1 text-sm font-medium rounded cursor-pointer 
-          transition ease-in-out duration-200
+          transition-all ease-in-out duration-200
+          outline-none
           hover:( bg-black/10 )  
           dark:hover:( bg-white/10 ) 
-          focus:( outline-none ring-2 ring-purple-600 )
+          focus:( ring-2 ring-orange-600 )
           dark:focus:( ring-purple-400 )
           dark:( text-gray-300 ) 
           "
+          css={[active && tw`text-orange-600 dark:text-purple-400`]}
         >
           {link.name}
         </a>
@@ -88,11 +96,13 @@ const MobileNav = () => {
   return (
     <div tw="flex justify-end w-full sm:hidden">
       <Menu as="div">
+        {/* @ts-ignore complex union error */}
         <Menu.Button tw="px-4 py-2 mr-5 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
           Nav
         </Menu.Button>
+        {/* @ts-ignore complex union error */}
         <Transition
-          //@ts-ignore This is part of the example
+          //@ts-ignore part of example
           as={Fragment}
           enter="transition ease-out duration-100"
           enterFrom="transform opacity-0 scale-95"
@@ -101,10 +111,12 @@ const MobileNav = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
+          {/* @ts-ignore complex union error */}
           <Menu.Items tw="absolute left-0 z-10 w-full mt-2 origin-top-right focus:outline-none">
             <div tw="px-5 py-2 mx-5 bg-white rounded-md shadow">
               {navLinks.map((link) => {
                 return (
+                  // @ts-ignore complex union error
                   <Menu.Item as="div" key={link.name}>
                     {({ active }) => {
                       return (
