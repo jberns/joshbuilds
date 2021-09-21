@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import 'twin.macro';
+import tw from 'twin.macro';
 
-const LogoIcon = () => {
+interface ILogoIcon {
+  type?: 'static';
+}
+
+const LogoIcon = ({ type }: ILogoIcon) => {
   return (
     <Link href="/" passHref>
       <a
@@ -10,11 +15,15 @@ const LogoIcon = () => {
         font-square text-gray-900 cursor-pointer shadow-md rounded-md 
         transform transition duration-200 
         bg-gradient-to-br from-amber-400 to-orange-600 
-        hover:( shadow-xl scale-110 )
-        focus:( outline-none ring-2 ring-orange-600 ring-offset-purple-300 ring-offset-2 )
+        
+        
         dark:( text-gray-100 from-pink-400 to-indigo-700 )
         focus:dark:( ring-purple-400 ring-offset-black/100 ring-offset-2 )
         "
+        css={[
+          type !== 'static' &&
+            tw`hover:( shadow-xl scale-110 ) focus:( outline-none ring-2 ring-orange-600 ring-offset-purple-300 ring-offset-2 )`,
+        ]}
       >
         <div tw="text-xl font-bold">JB</div>
       </a>
