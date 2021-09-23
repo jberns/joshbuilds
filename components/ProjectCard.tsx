@@ -21,8 +21,7 @@ const ExternalLink = tw.a`
   `;
 
 export const ProjectCard = ({ project }: IProjectCard) => {
-  const internalLink =
-    project.internal_url != undefined ? project.internal_url : '#';
+  const internalLink = project.link_url != undefined ? project.link_url : '#';
 
   return (
     <div
@@ -49,13 +48,13 @@ export const ProjectCard = ({ project }: IProjectCard) => {
               <div tw="flex flex-wrap">
                 {project.stack?.map((technology) => {
                   return (
-                    <div tw="mr-2" key={technology}>
+                    <div tw="mr-2 mb-1" key={technology}>
                       <ProjectTag technology={technology} />
                     </div>
                   );
                 })}
               </div>
-              <div tw="mt-4 items-center">
+              <div tw="mt-3 items-center">
                 <h2 tw="font-bold rounded text-gray-900 dark:text-white">
                   {project.name}
                 </h2>
@@ -67,16 +66,16 @@ export const ProjectCard = ({ project }: IProjectCard) => {
           </a>
         </Link>
         <div className="external Links" tw="mt-4 flex items-center space-x-4">
-          {project.internal_url ? (
+          {project.link_url ? (
             <div tw="">
-              <Link href={project.internal_url} passHref>
-                <ExternalLink tw="hidden dark:flex" href={project.internal_url}>
+              <Link href={project.link_url} passHref>
+                <ExternalLink tw="hidden dark:flex" href={project.link_url}>
                   <FontAwesomeIcon tw="text-white text-xl" icon={faLink} />
                 </ExternalLink>
               </Link>
 
-              <Link href={project.internal_url} passHref>
-                <ExternalLink tw="flex dark:hidden" href={project.internal_url}>
+              <Link href={project.link_url} passHref>
+                <ExternalLink tw="flex dark:hidden" href={project.link_url}>
                   <FontAwesomeIcon tw="text-gray-900 text-xl" icon={faLink} />
                 </ExternalLink>
               </Link>
