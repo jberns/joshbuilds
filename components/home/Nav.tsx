@@ -100,7 +100,6 @@ const MobileNav = () => {
         {({ open }) => (
           <>
             <Menu.Button
-              //  @ts-ignore complex union error
               tw="text-lg font-medium text-orange-600 rounded-md 
                 hover:bg-opacity-30 
                 focus:outline-none
@@ -110,9 +109,7 @@ const MobileNav = () => {
             >
               <FontAwesomeIcon icon={faBars} />
             </Menu.Button>
-            {/* @ts-ignore complex union error */}
             <Transition
-              //@ts-ignore part of example
               show={open}
               as={Fragment}
               enter="transition ease-out duration-100"
@@ -145,12 +142,10 @@ const MobileNav = () => {
                   </li>
                 </ul>
 
-                {/* @ts-ignore complex union error */}
                 <Menu.Items tw="focus:outline-none">
                   <div tw="">
                     {navLinks.map((link) => {
                       return (
-                        // @ts-ignore complex union error
                         <Menu.Item as="div" key={link.name}>
                           {({ active }) => {
                             return (

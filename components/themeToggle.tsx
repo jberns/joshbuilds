@@ -40,7 +40,6 @@ const ThemeToggle = () => {
           clipRule="evenodd"
         />
       </svg>
-      {/* @ts-ignore - Union too complex error */}
       <Switch
         checked={isDark()}
         onChange={(value) => switchTheme(value)}
