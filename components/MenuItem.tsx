@@ -72,7 +72,7 @@ export default function MenuItem() {
               aria-hidden="true"
             />
           </Popover.Button>
-
+          {/* @ts-ignore - Union too complex error */}
           <Transition
             as={Fragment}
             enter="transition ease-out duration-200"

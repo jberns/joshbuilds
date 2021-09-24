@@ -23,7 +23,7 @@ export const Lockup = () => {
       >
         <div className="flex-none w-full bg-gray-100 rounded-3xl" />
         <div
-          className={`w-full flex-none -ml-full rounded-3xl transform shadow-lg bg-gradient-to-br ${gradients['orange'][0]} rotate-1`}
+          className={`w-full flex-none -ml-full rounded-3xl transform shadow-lg bg-gradient-to-br ${gradients.orange[0]} rotate-1`}
         ></div>
       </div>
       <div
