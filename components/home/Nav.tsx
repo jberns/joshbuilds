@@ -35,7 +35,7 @@ export const Nav = ({ position }: INav) => {
     >
       <nav
         css={[
-          tw`flex justify-between w-full py-3 pl-5 pr-5 transition duration-200 ease-in-out shadow backdrop-blur-md bg-white/50 dark:bg-gray-900`,
+          tw`flex justify-between w-full py-3 pl-5 pr-5 shadow backdrop-blur-md bg-white/60 dark:bg-gray-900`,
         ]}
       >
         {/* Desktop Nav Component */}
@@ -76,15 +76,14 @@ const NavLink = (link: INavLinks, currentPath: string) => {
         <a
           tw="
           block px-4 py-1 text-sm font-medium rounded cursor-pointer 
-          transition-all ease-in-out duration-200
           outline-none
           hover:( bg-black/10 )  
           dark:hover:( bg-white/10 ) 
-          focus:( ring-2 ring-orange-600 )
+          focus:( ring-2 ring-purple-600 )
           dark:focus:( ring-purple-400 )
           dark:( text-gray-300 ) 
           "
-          css={[active && tw`text-orange-600 dark:text-purple-400`]}
+          css={[active && tw`text-purple-600 dark:text-purple-400`]}
         >
           {link.name}
         </a>
@@ -100,7 +99,7 @@ const MobileNav = () => {
         {({ open }) => (
           <>
             <Menu.Button
-              tw="text-lg font-medium text-orange-600 rounded-md 
+              tw="text-lg font-medium text-purple-600 rounded-md 
                 hover:bg-opacity-30 
                 focus:outline-none
                 focus-visible:(ring-2 ring-white ring-opacity-75)
@@ -153,7 +152,7 @@ const MobileNav = () => {
                                 <a
                                   css={[
                                     active
-                                      ? tw`bg-orange-400 dark:(bg-purple-400) dark:hover:text-white`
+                                      ? tw`bg-purple-600 text-white dark:(bg-purple-400) dark:hover:text-white`
                                       : tw`text-gray-900`,
                                     tw`flex items-center cursor-pointer w-full px-2 py-1 text-sm rounded-md font-medium dark:(text-gray-200)`,
                                   ]}

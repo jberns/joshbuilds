@@ -27,11 +27,13 @@ export const Development = () => {
           <Link href="/projects" passHref>
             <a
               tw="
-              pt-4 inline-flex text-lg font-medium transition-colors duration-200 rounded-md  
+              mt-4 inline-flex text-lg font-medium transition-colors duration-200 rounded-md  
+              text-violet-600
               sm:text-2xl 
               focus:(ring-2 ring-offset-gray-100 ring-offset-2 ring-current outline-none) 
-              text-violet-600 hover:text-violet-800
-              dark:(text-violet-400 ring-offset-gray-900) dark:hover:text-violet-200
+              hover:text-violet-800
+              dark:(text-violet-400 ring-offset-gray-900) 
+              dark:hover:text-violet-200
             "
             >
               See my projects &rarr;

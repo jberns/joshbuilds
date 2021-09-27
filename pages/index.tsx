@@ -9,10 +9,10 @@ const Home: NextPage = () => {
   return (
     <div tw="">
       <div tw="relative w-full h-screen bg-cover bg-gradient">
-        <div tw="absolute inset-0 duration-200 ease-in-out dark:bg-black/50 transition"></div>
+        <div tw="absolute inset-0 duration-200 ease-in-out dark:bg-black/50"></div>
         <div tw="relative flex items-center justify-center h-full">
           <div tw="flex flex-col w-full mx-4 md:mx-20 md:justify-start">
-            <div tw="px-8 py-4 text-gray-800 shadow-lg bg-white/40 dark:bg-gray-400/10 dark:text-gray-100 backdrop-blur-md rounded-2xl">
+            <div tw="px-8 py-4 text-gray-800 shadow-lg bg-white/60 dark:bg-gray-900/60 dark:text-gray-100 backdrop-blur-md rounded-2xl">
               <h1 tw="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold text-gray-900 tracking-tight dark:text-gray-100">
                 Hey, I&apos;m Josh.
               </h1>
@@ -21,19 +21,19 @@ const Home: NextPage = () => {
                 <span tw="text-purple-600 dark:text-purple-400">
                   full stack developer
                 </span>
-                {' | '}
+                <span> &middot; </span>
                 <span tw="text-purple-600 dark:text-purple-400">
                   mechanical engineer
                 </span>
-                {' | '}
+                <span> &middot; </span>
                 <span tw="text-purple-600 dark:text-purple-400">
                   rock climber
                 </span>
-                {' | '}
+                <span> &middot; </span>
                 <span tw="text-purple-600 dark:text-purple-400">
                   business analyst
                 </span>
-                {' | '}
+                <span> &middot; </span>
                 <span tw="text-purple-600 dark:text-purple-400">cyclist</span>.
               </h1>
 
@@ -41,15 +41,14 @@ const Home: NextPage = () => {
                 <Link href="/contact" passHref>
                   <a
                     tw="
-                px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 
-                bg-gradient-to-br from-amber-400 to-orange-600 
-                transform transition ease-in-out duration-200 
-                hover:(scale-110 shadow-md)
-                focus:(outline-none ring-2 ring-amber-400)
-                dark:(text-gray-100 from-pink-400 to-indigo-700)
-                dark:focus:(ring-purple-400)
-                dark:hover:(text-white)
-                "
+                      px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 
+                      bg-gradient-to-br from-fuchsia-400 to-indigo-500
+                      hover:(scale-110 shadow-md)
+                      focus:(outline-none ring-2 ring-purple-600)
+                      dark:(text-gray-100 from-purple-400 to-indigo-700)
+                      dark:focus:(ring-purple-400)
+                      dark:hover:(text-white)
+                    "
                   >
                     <div>Contact</div>
                   </a>
@@ -58,14 +57,13 @@ const Home: NextPage = () => {
                 <Link href="/about" passHref>
                   <a
                     tw="
-                px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 bg-white/50 
-                transform transition ease-in-out duration-200 
-                hover:( scale-110 shadow-md )
-                dark:( text-gray-100 bg-white/10 )
-                focus:( outline-none ring-2 ring-amber-400 )
-                dark:focus:( ring-purple-400 )
-                dark:hover:(text-white)
-                "
+                      px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 bg-white/50 
+                      hover:(scale-110 shadow-md)
+                      dark:(text-gray-100 bg-white/10)
+                      focus:(outline-none ring-2 ring-purple-600)
+                      dark:focus:(ring-purple-400)
+                      dark:hover:(text-white)
+                    "
                   >
                     About me
                   </a>
@@ -77,7 +75,7 @@ const Home: NextPage = () => {
 
         <nav tw="absolute w-full bottom-4">
           <div tw="flex justify-center">
-            <div tw="text-gray-900 rounded-full bg-white/50 backdrop-blur-md dark:(text-gray-200 bg-black/20)">
+            <div tw="text-gray-900 rounded-full backdrop-blur-md dark:(text-gray-200)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 tw="w-10 h-10"

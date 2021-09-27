@@ -13,16 +13,13 @@ const LogoIcon = ({ type }: ILogoIcon) => {
         tw="
         flex justify-center items-center h-10 w-10 
         font-square text-gray-900 cursor-pointer shadow-md rounded-md 
-        transform transition duration-200 
-        bg-gradient-to-br from-amber-400 to-orange-600 
-        
-        
-        dark:( text-gray-100 from-pink-400 to-indigo-700 )
+        bg-gradient-to-br from-fuchsia-400 to-indigo-500
+        dark:( text-gray-100 from-pink-500 to-indigo-800 )
         focus:dark:( ring-purple-400 ring-offset-black/100 ring-offset-2 )
         "
         css={[
           type !== 'static' &&
-            tw`hover:( shadow-xl scale-110 ) focus:( outline-none ring-2 ring-orange-600 ring-offset-purple-300 ring-offset-2 )`,
+            tw`hover:( shadow-xl scale-110 ) focus:( outline-none ring-2 ring-purple-600 ring-offset-purple-300 ring-offset-2 )`,
         ]}
       >
         <div tw="text-xl font-bold">JB</div>
