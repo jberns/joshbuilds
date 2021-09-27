@@ -1,17 +1,20 @@
 import { Switch } from '@headlessui/react';
-import { useContext } from 'react';
-import { ETheme, ThemeContext } from './themeContext';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { ETheme } from './themeContext';
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
+  useEffect(() => setMounted(true), []);
   //Return null for the server for first render will be on the client in the correct state once the theme value is populated.
-  if (!theme) {
+  if (!mounted) {
     return null;
   }
 
   const isDark = () => {
-    return theme === ETheme.Dark;
+    return resolvedTheme === ETheme.Dark;
   };
 
   function switchTheme(isDark: boolean) {
