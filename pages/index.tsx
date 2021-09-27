@@ -16,6 +16,7 @@ const Home: NextPage = () => {
             alt="background wave"
             layout="fill"
             objectFit="cover"
+            priority={true}
           />
         </div>
         <div tw="absolute inset-0 dark:bg-black/20"></div>
