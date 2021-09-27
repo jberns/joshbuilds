@@ -35,7 +35,7 @@ export const Nav = ({ position }: INav) => {
     >
       <nav
         css={[
-          tw`flex justify-between w-full py-3 pl-5 pr-5 shadow backdrop-blur-md bg-white/60 dark:bg-gray-900/60`,
+          tw`flex justify-between w-full py-3 pl-5 pr-5 shadow backdrop-blur-md bg-white/60 dark:bg-gray-900`,
         ]}
       >
         {/* Desktop Nav Component */}
