@@ -93,7 +93,7 @@ module.exports = {
       },
       backgroundImage: {
         texture: `url('/img/texture.jpg')`,
-        gradient: `url('/img/purple-teal-gradient.jpg')`,
+        index: `url('/img/wave.svg')`,
       },
       blur: {
         px: '1px',
