@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div tw="">
       <div tw="relative w-full h-screen">
-        <div tw="absolute inset-0 transition-opacity animate-fade-in">
+        <div tw="absolute inset-0 transition-opacity animate-fade-in dark:bg-black">
           <Image
             src={'/img/wave.svg'}
             alt="background wave"
