@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import 'twin.macro';
@@ -8,7 +9,15 @@ import { Development } from '../components/home/Development';
 const Home: NextPage = () => {
   return (
     <div tw="">
-      <div tw="relative w-full h-screen bg-cover bg-center bg-index">
+      <div tw="relative w-full h-screen">
+        <div tw="absolute inset-0 transition-opacity animate-fade-in">
+          <Image
+            src={'/img/wave.svg'}
+            alt="background wave"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div tw="absolute inset-0 dark:bg-black/20"></div>
         <div tw="relative flex items-center justify-center h-full">
           <div tw="flex flex-col w-full mx-4 md:mx-20 md:justify-start">

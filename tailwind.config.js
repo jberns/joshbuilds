@@ -86,10 +86,15 @@ module.exports = {
             transform: 'rotate(-1deg)',
           },
         },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
       },
       animation: {
         blob: 'blob 7s infinite',
         'bg-gradient-tilt': 'bg-gradient-tilt 10s infinite linear',
+        'fade-in': 'fade-in 1s linear forwards',
       },
       backgroundImage: {
         texture: `url('/img/texture.jpg')`,
