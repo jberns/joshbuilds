@@ -5,6 +5,7 @@ import React from 'react';
 import 'twin.macro';
 import { Collaboration } from '../components/home/Collaboration';
 import { Development } from '../components/home/Development';
+import wave from '../public/img/wave.svg';
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
       <div tw="relative w-full h-screen">
         <div tw="absolute inset-0 transition-opacity animate-fade-in dark:bg-black">
           <Image
-            src={'/img/wave.svg'}
+            src={wave}
             alt="background wave"
             layout="fill"
             objectFit="cover"
