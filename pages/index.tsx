@@ -75,7 +75,7 @@ const Home: NextPage = () => {
 
         <nav tw="absolute w-full bottom-4">
           <div tw="flex justify-center">
-            <div tw="text-gray-900 rounded-full backdrop-blur-md dark:(text-gray-200)">
+            <div tw="text-gray-900 rounded-full dark:(text-gray-200)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 tw="w-10 h-10"
