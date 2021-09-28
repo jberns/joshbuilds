@@ -9,17 +9,19 @@ import wave from '../public/img/wave.svg';
 
 const Home: NextPage = () => {
   return (
-    <div tw="">
+    <div tw="bg-white dark:bg-black">
       <div tw="relative w-full h-screen">
-        <div tw="absolute inset-0 transition-opacity animate-fade-in dark:bg-black">
-          <Image
-            src={wave}
-            alt="background wave"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
-        </div>
+        {wave && (
+          <div tw="absolute inset-0 transition-opacity animate-fade-in">
+            <Image
+              src={wave}
+              alt="background wave"
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+            />
+          </div>
+        )}
         <div tw="absolute inset-0 dark:bg-black/20"></div>
         <div tw="relative flex items-center justify-center h-full">
           <div tw="flex flex-col w-full mx-4 md:mx-20 md:justify-start">
