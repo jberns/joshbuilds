@@ -1,4 +1,4 @@
-interface ISVG {
+export interface ISVG {
   className?: string;
 }
 

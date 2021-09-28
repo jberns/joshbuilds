@@ -23,8 +23,8 @@ export default class MyDocument extends Document {
           tw="
             bg-white 
             text-white 
-            dark:bg-black 
-            dark:text-black
+            dark:bg-gray-900 
+            dark:text-gray-900
             "
         >
           <Main />
