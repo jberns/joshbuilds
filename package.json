@@ -31,7 +31,8 @@
     "next-themes": "^0.0.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-flow-renderer": "^9.6.7"
+    "react-flow-renderer": "^9.6.7",
+    "simplebar-react": "^2.3.6"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
