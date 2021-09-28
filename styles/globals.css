@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @media screen and (min-width: 960px) {
-    html {
-      margin-left: calc(100vw - 100%);
-      margin-right: 0;
-    }
-  }
+html {
+  overflow-y: scroll;
+}
 
+@layer base {
   /* Slick Fits */
   @font-face {
     font-family: 'radnika_next';
