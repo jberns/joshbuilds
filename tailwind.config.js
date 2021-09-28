@@ -90,11 +90,16 @@ module.exports = {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
+        slideIn: {
+          '0%': { transform: 'translate(0px, 100px)', opacity: '0' },
+          '100%': { transform: 'translate(0px, 0px)', opacity: '1' },
+        },
       },
       animation: {
         blob: 'blob 7s infinite',
         'bg-gradient-tilt': 'bg-gradient-tilt 10s infinite linear',
-        'fade-in': 'fade-in 1s linear forwards',
+        'fade-in': 'fade-in 1s ease',
+        slideIn: 'slideIn 0.75s ease',
       },
       backgroundImage: {
         texture: `url('/img/texture.jpg')`,
