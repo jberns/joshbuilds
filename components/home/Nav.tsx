@@ -77,6 +77,7 @@ const NavLink = (link: INavLinks, currentPath: string) => {
           tw="
           block px-4 py-1 text-sm font-medium rounded cursor-pointer 
           outline-none
+          text-gray-900
           hover:( bg-black/10 )  
           dark:hover:( bg-white/10 ) 
           focus:( ring-2 ring-purple-600 )
