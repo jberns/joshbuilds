@@ -7,7 +7,7 @@ html {
 }
 
 .simplebar-track {
-  @apply !w-3 mr-0.5;
+  @apply !w-3;
 }
 
 .simplebar-scrollbar:before {
