@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  overflow-y: hidden;
-}
-
 .simplebar-track {
   @apply !w-3;
 }

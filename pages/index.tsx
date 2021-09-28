@@ -10,7 +10,7 @@ import wave from '../public/img/wave.svg';
 const Home: NextPage = () => {
   return (
     <div tw="bg-white dark:bg-black">
-      <div tw="relative w-full h-screen">
+      <div tw="relative w-screen h-screen">
         {wave && (
           <div tw="absolute inset-0 transition-opacity animate-fade-in">
             <Image
