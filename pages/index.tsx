@@ -1,15 +1,28 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import 'twin.macro';
 import { Collaboration } from '../components/home/Collaboration';
 import { Development } from '../components/home/Development';
+import wave from '../public/img/wave.svg';
 
 const Home: NextPage = () => {
   return (
-    <div tw="">
-      <div tw="relative w-full h-screen bg-cover bg-gradient">
-        <div tw="absolute inset-0 duration-200 ease-in-out dark:bg-black/50"></div>
+    <div tw="bg-white dark:bg-black">
+      <div tw="relative w-full h-screen">
+        {wave && (
+          <div tw="absolute inset-0 transition-opacity animate-fade-in">
+            <Image
+              src={wave}
+              alt="background wave"
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+            />
+          </div>
+        )}
+        <div tw="absolute inset-0 dark:bg-black/20"></div>
         <div tw="relative flex items-center justify-center h-full">
           <div tw="flex flex-col w-full mx-4 md:mx-20 md:justify-start">
             <div tw="px-8 py-4 text-gray-800 shadow-lg bg-white/60 dark:bg-gray-900/60 dark:text-gray-100 backdrop-blur-md rounded-2xl">

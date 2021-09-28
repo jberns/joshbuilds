@@ -15,7 +15,7 @@ export function MainLayout({ children }: ILayoutProps) {
   const position = path === '/' ? 'absolute' : 'relative';
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen mr-4">
       <Nav position={position} />
       <main className="">{children}</main>
       <Footer />

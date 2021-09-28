@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: hidden;
+}
+
+.simplebar-track {
+  @apply !w-3;
+}
+
+.simplebar-scrollbar:before {
+  @apply bg-black dark:bg-white;
+}
+
 @layer base {
   /* Slick Fits */
   @font-face {
@@ -31,28 +43,8 @@
   .styling-forms {
     @apply w-full border-gray-300 rounded-lg shadow-sm focus:border-purple-600 focus:ring-purple-500;
   }
-}
 
-@layer utilities {
-  .square {
-    aspect-ratio: 1/1;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  ,
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-
-  .text-shadow {
-    text-shadow: 2px 2px 0 rgb(0 0 0 / 10%);
-  }
-}
-
-/* Theming Example */
-@layer base {
+  /* Theming Example */
   :root {
     --color-text-base: #ffffff;
     --color-text-muted: #c7d2fe;
@@ -79,5 +71,23 @@
     --color-button-accent: #243403;
     --color-button-accent-hover: #374f05;
     --color-button-muted: 212, 255, 122;
+  }
+}
+
+@layer utilities {
+  .square {
+    aspect-ratio: 1/1;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  ,
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 0 rgb(0 0 0 / 10%);
   }
 }
