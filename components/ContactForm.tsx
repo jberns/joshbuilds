@@ -1,42 +1,54 @@
 import 'twin.macro';
+import tw from 'twin.macro';
+
+const Input = tw.input`text-gray-100`;
+const Label = tw.label`block text-gray-500 text-sm font-medium mb-1 dark:(text-gray-400)`;
+const baseFormStyle = tw`
+  w-full border-2 text-gray-700 bg-gray-200 border-gray-200 mb-4 appearance-none rounded leading-tight
+  dark:(text-white bg-gray-600 border-gray-700) 
+  focus:(bg-white outline-none border-purple-500 ring-0)
+  dark:focus:(bg-gray-700 outline-none border-purple-500 ring-0)
+  `;
 
 export function ContactForm() {
   return (
-    <div tw="flex justify-center w-full text-gray-900 dark:(text-white)">
-      <form name="contact" action="/" method="POST" data-netlify="true">
+    <div tw="flex justify-center">
+      <form
+        tw="w-full"
+        name="contact"
+        action="/"
+        method="POST"
+        data-netlify="true"
+      >
         <input type="hidden" name="form-name" value="contact" />
 
         <div>
-          <label htmlFor="name">Name:</label> <br />
-          <input
-            tw="bg-gray-800 rounded w-full"
-            type="text"
-            name="name"
-            id="name"
-          />
+          <Label htmlFor="name">Name:</Label>
+          <Input css={[baseFormStyle]} type="text" name="name" id="name" />
         </div>
 
         <div>
-          <label htmlFor="email">Email:</label> <br />
-          <input
-            tw="bg-gray-800 rounded w-full"
-            type="email"
-            name="email"
-            id="email"
-          />
+          <Label htmlFor="email">Email:</Label>
+          <Input css={[baseFormStyle]} type="email" name="email" id="email" />
         </div>
 
         <div>
-          <label htmlFor="message">Message:</label> <br />
+          <Label htmlFor="message">Message:</Label>
           <textarea
-            tw="bg-gray-800 rounded w-full"
+            css={[baseFormStyle]}
             name="message"
             id="message"
           ></textarea>
         </div>
 
         <button
-          tw="py-1 px-3 rounded bg-purple-600 text-gray-100 dark:(bg-purple-400)"
+          tw="py-2 px-4 font-bold rounded
+          bg-purple-600 text-white
+          hover:(bg-purple-500)
+          dark:(bg-purple-400) 
+          dark:hover:(bg-purple-500)
+          focus:(outline-none ring-2 ring-offset-2 ring-purple-600 ring-offset-gray-200)
+          dark:focus:( ring-purple-400 ring-offset-gray-700)"
           type="submit"
         >
           Send

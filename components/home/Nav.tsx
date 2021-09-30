@@ -19,7 +19,6 @@ interface INavLinks {
 
 const navLinks: INavLinks[] = [
   { name: 'Home', url: '/' },
-  { name: 'About', url: '/about' },
   { name: 'Projects', url: '/projects' },
   { name: 'Contact', url: '/contact' },
 ];
@@ -30,6 +29,7 @@ export const Nav = ({ position }: INav) => {
 
   return (
     <div
+      id="nav"
       tw="w-full z-10"
       css={[position === 'relative' ? tw`relative` : tw`absolute`]}
     >
