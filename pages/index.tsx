@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import 'twin.macro';
 import { Collaboration } from '../components/home/Collaboration';
@@ -12,7 +11,7 @@ const Home: NextPage = () => {
     <div tw="bg-white dark:bg-gray-900">
       <div tw="relative w-screen h-screen">
         {wave && (
-          <div tw="absolute inset-0 transition-opacity animate-fade-in">
+          <div tw="absolute inset-0">
             <Image
               src={wave}
               alt="background wave"
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
         <div tw="absolute inset-0 dark:bg-black/20"></div>
         <div tw="relative flex items-center justify-center h-full">
           <div tw="flex flex-col w-full mx-4 md:mx-20 md:justify-start">
-            <div tw="relative animate-slideIn !duration-1000">
+            <div tw="relative animate-slideIn">
               <div
                 tw="absolute -inset-1 rounded-2xl
                   dark:(bg-gradient-to-r from-purple-600 to-teal-700 blur-md opacity-75)
@@ -62,39 +61,6 @@ const Home: NextPage = () => {
                   <span tw="text-purple-600 dark:text-purple-400">cyclist</span>
                   .
                 </h1>
-
-                <div tw="flex mt-4 lg:mt-8 space-x-4 justify-center sm:justify-start">
-                  <Link href="/contact" passHref>
-                    <a
-                      tw="
-                        px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 
-                        hover:(scale-110 shadow-md)
-                        focus:(outline-none ring-2 ring-purple-600)
-                        bg-gradient-to-br from-fuchsia-400 to-indigo-500
-                        dark:(text-gray-100 from-purple-500 to-indigo-700)
-                        dark:focus:(ring-purple-400)
-                        dark:hover:(text-white)
-                        "
-                    >
-                      <div>Contact</div>
-                    </a>
-                  </Link>
-
-                  <Link href="/about" passHref>
-                    <a
-                      tw="
-                        px-4 py-2 rounded-md shadow font-medium text-sm text-gray-900 bg-white/50 
-                        hover:(scale-110 shadow-md)
-                        dark:(text-gray-100 bg-white/10)
-                        focus:(outline-none ring-2 ring-purple-600)
-                        dark:focus:(ring-purple-400)
-                        dark:hover:(text-white)
-                      "
-                    >
-                      About me
-                    </a>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>

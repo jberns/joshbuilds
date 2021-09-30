@@ -215,8 +215,10 @@ const Projects: NextPage = () => {
 
   return (
     <div
-      tw="flex flex-col min-h-screen pt-20 transition transform ease-in-out duration-200
-    dark:bg-gray-800"
+      tw="flex flex-col min-h-screen pt-20
+        bg-gray-100
+        dark:bg-gray-800
+        "
     >
       <div tw="max-w-5xl mx-auto px-10">
         <Header text="Personal Projects" />

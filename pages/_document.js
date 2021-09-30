@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { extractCritical } from '@emotion/server';
 import 'twin.macro';
-import tw from 'twin.macro';
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);

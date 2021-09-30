@@ -110,7 +110,7 @@ export default function MenuItem() {
                     <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">
                       Recent Posts
                     </h3>
-                    <ul role="list" className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-4">
                       {recentPosts.map((post) => (
                         <li key={post.id} className="text-base truncate">
                           <a

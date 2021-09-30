@@ -13,10 +13,21 @@ interface IProjectCard {
 }
 
 const ExternalLink = tw.a`
+  p-1  
   rounded
   relative
-  hover:(shadow-lg transform scale-150 transition ease-in-out duration-200) 
-  focus:(outline-none ring-2 ring-amber-400)
+  text-gray-900 text-xl dark:text-white
+  hover:(shadow-lg transform scale-105 transition ease-in-out duration-200) 
+  focus:(outline-none ring-2 ring-purple-600)
+  dark:focus:(ring-purple-400)
+  `;
+
+const InternalLink = tw.a`
+  rounded
+  flex
+  flex-1
+  p-1
+  focus:(outline-none ring-2 ring-purple-600)
   dark:focus:(ring-purple-400)
   `;
 
@@ -29,21 +40,14 @@ export const ProjectCard = ({ project }: IProjectCard) => {
       tw="
         flex
         flex-col  
-        bg-gray-100 rounded shadow-lg transition transform  ease-in-out duration-200
+        bg-white rounded shadow-lg transition-transform transform ease-in-out duration-200
         hover:(scale-105)
         dark:bg-gray-700
         "
     >
       <div tw="flex flex-col flex-1 m-6">
         <Link href={internalLink} passHref>
-          <a
-            tw="
-            rounded
-            flex
-            flex-1
-            focus:(outline-none ring-2 ring-amber-400)
-            dark:focus:(ring-purple-400)"
-          >
+          <InternalLink>
             <div tw="flex flex-col w-full">
               <div tw="flex flex-wrap">
                 {project.stack?.map((technology) => {
@@ -63,34 +67,21 @@ export const ProjectCard = ({ project }: IProjectCard) => {
                 {project.description}
               </p>
             </div>
-          </a>
+          </InternalLink>
         </Link>
         <div className="external Links" tw="mt-4 flex items-center space-x-4">
           {project.link_url ? (
-            <div tw="">
-              <Link href={project.link_url} passHref>
-                <ExternalLink tw="hidden dark:flex" href={project.link_url}>
-                  <FontAwesomeIcon tw="text-white text-xl" icon={faLink} />
-                </ExternalLink>
-              </Link>
-
-              <Link href={project.link_url} passHref>
-                <ExternalLink tw="flex dark:hidden" href={project.link_url}>
-                  <FontAwesomeIcon tw="text-gray-900 text-xl" icon={faLink} />
-                </ExternalLink>
-              </Link>
-            </div>
+            <Link href={project.link_url} passHref>
+              <ExternalLink href={project.link_url}>
+                <FontAwesomeIcon icon={faLink} />
+              </ExternalLink>
+            </Link>
           ) : null}
 
           {project.github_url ? (
-            <div tw="">
-              <ExternalLink tw="hidden dark:flex" href={project.github_url}>
-                <FontAwesomeIcon tw="text-white text-xl" icon={faGithub} />
-              </ExternalLink>
-              <ExternalLink tw="flex dark:hidden" href={project.github_url}>
-                <FontAwesomeIcon tw="text-gray-900 text-xl" icon={faGithub} />
-              </ExternalLink>
-            </div>
+            <ExternalLink href={project.github_url}>
+              <FontAwesomeIcon icon={faGithub} />
+            </ExternalLink>
           ) : null}
 
           {project.youtube_url ? (
