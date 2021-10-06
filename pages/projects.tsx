@@ -39,8 +39,7 @@ const Projects: NextPage = () => {
         name: 'Project Notebook',
         description:
           'Project Notebook is an integrated note taking + task management system with out of the box dashboards for each project to track progress',
-        github_url:
-          'https://github.com/codefordenver/energy-assistance-dashboard',
+        github_url: 'https://github.com/jberns/notes',
         stack: [
           TechTypes.React,
           TechTypes.NEXTJS,
