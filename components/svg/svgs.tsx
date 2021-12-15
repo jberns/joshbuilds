@@ -372,3 +372,50 @@ export const CollaborationSVG = ({ className = '' }: ISVG) => {
     </svg>
   );
 };
+
+export const WaveSVG = ({ className = '' }: ISVG) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      preserveAspectRatio="none"
+      viewBox="0 0 1920 1089"
+      className={className}
+      style={{
+        marginRight: '-2px',
+        backgroundRepeat: 'initial',
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+      }}
+    >
+      <g
+        transform="translate(960,544.5) scale(1,1) translate(-960,-544.5)"
+        style={{ transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
+      >
+        <linearGradient id="lg-0.5902258639776325" x1="0" x2="1" y1="0" y2="0">
+          <stop stopColor="#ff00ff" offset="0"></stop>
+
+          <stop stopColor="#00ffff" offset="1"></stop>
+        </linearGradient>
+        <path
+          d="M 0 0 L 0 935.025 Q 320 868.514 640 828.832 T 1280 606.574 T 1920 568.776 L 1920 0 Z"
+          fill="url(#lg-0.5902258639776325)"
+          opacity="0.4"
+          style={{ opacity: 0.4 }}
+        ></path>
+        <path
+          d="M 0 0 L 0 1024.42 Q 320 874.785 640 860.178 T 1280 676.264 T 1920 455.036 L 1920 0 Z"
+          fill="url(#lg-0.5902258639776325)"
+          opacity="0.4"
+          style={{ opacity: 0.4 }}
+        ></path>
+        <path
+          d="M 0 0 L 0 1012.17 Q 320 893.793 640 852.279 T 1280 614.603 T 1920 515.788 L 1920 0 Z"
+          fill="url(#lg-0.5902258639776325)"
+          opacity="0.4"
+          style={{ opacity: 0.4 }}
+        ></path>
+      </g>
+    </svg>
+  );
+};

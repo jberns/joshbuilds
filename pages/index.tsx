@@ -1,28 +1,17 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import React from 'react';
 import 'twin.macro';
 import { Collaboration } from '../components/home/Collaboration';
 import { Development } from '../components/home/Development';
-import wave from '../public/img/wave.svg';
+import { WaveSVG } from '../components/svg/svgs';
 
 const Home: NextPage = () => {
   return (
     <div tw="bg-white dark:bg-gray-900">
       <div tw="relative w-screen h-screen">
-        {wave && (
-          <div tw="absolute inset-0">
-            <Image
-              src={wave}
-              alt="background wave"
-              layout="fill"
-              objectFit="cover"
-              priority={true}
-            />
-          </div>
-        )}
+        <WaveSVG className="absolute z-0 w-full h-full" />
         <div tw="absolute inset-0 dark:bg-black/20"></div>
-        <div tw="relative flex items-center justify-center h-full">
+        <div tw="z-10 flex items-center justify-center h-full">
           <div tw="flex flex-col w-full mx-4 md:mx-20 md:justify-start">
             <div tw="relative animate-slideIn">
               <div
@@ -41,25 +30,17 @@ const Home: NextPage = () => {
                   Hey, I&apos;m Josh.
                 </h1>
                 <h1 tw="mt-4 lg:mt-8 text-lg font-medium sm:text-2xl text-gray-600 dark:text-gray-200">
-                  I am a{' '}
-                  <span tw="text-purple-600 dark:text-purple-400">
-                    full stack developer
-                  </span>
-                  <span> &middot; </span>
-                  <span tw="text-purple-600 dark:text-purple-400">
+                  <span tw="text-purple-600 dark:text-purple-300">
+                    I am a full stack developer
+                    <span> &middot; </span>
                     mechanical engineer
-                  </span>
-                  <span> &middot; </span>
-                  <span tw="text-purple-600 dark:text-purple-400">
-                    rock climber
-                  </span>
-                  <span> &middot; </span>
-                  <span tw="text-purple-600 dark:text-purple-400">
+                    <span> &middot; </span>
                     business analyst
+                    <span> &middot; </span>
+                    rock climber
+                    <span> &middot; </span>
+                    cyclist.
                   </span>
-                  <span> &middot; </span>
-                  <span tw="text-purple-600 dark:text-purple-400">cyclist</span>
-                  .
                 </h1>
               </div>
             </div>
